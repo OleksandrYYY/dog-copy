@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+#container-breeds,
+#container-list-breeds,
+#container-random-images,
+#container-favorite-images {
+    margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 10px;
+    color: #444;
+}
+
+#container-list-breeds ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#container-list-breeds li {
+    background-color: #fff;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    flex: 1 1 calc(25% - 20px);
+    text-align: center;
+}
+
+#container-list-breeds li:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+#container-list-breeds li.viewed {
+    background-color: rgb(235, 220, 220);
+    color: rgb(9, 89, 64);
+    text-decoration: line-through;
+    cursor: default;
+}
+
+button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+button.back-button {
+    background-color: #007BFF;
+}
+
+button.back-button:hover {
+    background-color: #0056b3;
+}
+
+img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#container-random-images,
+#container-favorite-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#container-random-images button,
+#container-favorite-images button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 5px;
+    background-color: #dc3545;
+};
+
+#container-random-images button:hover,
+#container-favorite-images button:hover {
+    background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+    #container-list-breeds li {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    #container-list-breeds li {
+        flex: 1 1 100%;
+    }
+}
